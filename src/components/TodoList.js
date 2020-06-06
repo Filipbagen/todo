@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import Task from './components/Task'
 
 const Container = styled.div`
   background-color: crimson;
@@ -9,13 +10,8 @@ const Container = styled.div`
   }
 `
 
-const Task = styled.div`
-  color: white;
-  padding: 10px;
-`
-
 function TodoList ({ tasks, onItemPressed }) {
-  const Elements = tasks.map(task => <Task onClick={() => onItemPressed(task.id)} key={task.id}>{task.title}</Task>)
+  const Elements = tasks.map(task => <Task onClick={() => onItemPressed(task.id)} key={task.id} taks={task} />)
 
   return (
     <Container>
